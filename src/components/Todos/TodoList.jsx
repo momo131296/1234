@@ -41,7 +41,7 @@ function TodoList() {
   const EditTodo = () => {
     todos.forEach((todo) => {
       if (todo.id === editId) {
-        todo.done = value;
+        todo.todo = value;
       }
     });
     setTodos([...todos]);
@@ -57,6 +57,7 @@ function TodoList() {
   const Edit = (todo) => {
     todo.done = !todo.done
     setEditId(todo.id);
+    setTodos([...todos]);
     localStorage.setItem("todos", JSON.stringify([...todos]));
     
   };
